@@ -1,0 +1,22 @@
+name: dispatch receiver
+
+on: 
+  repository_dispatch:
+    types:
+      - metarecon3
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Plicar Clone
+        run: |
+          git config -f .gitmodules submodule.metarecon3/plicar.branch ${{ github.event.client_payload.branch }}
+          git submodule update --remote --recursive
+      - name: sdfStudio Clone
+        run: |
+          git config -f ./metarecon3/plicar/submodule/.gitsubmodule submodule.submodule.branch ${{ github.event.client_payload.branch }}
+          git submodule update --remote --recursive
+          git status
