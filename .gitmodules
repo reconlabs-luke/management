@@ -1,0 +1,3 @@
+[submodule "metarecon3/plicar"]
+	path = metarecon3/plicar
+	url = git@github.com:reconlabs-luke/plicar.git
