@@ -1,7 +1,7 @@
 name: Repository Dispatch
 on:
   repository_dispatch:
-    types: [my-event]
+    types: [metarecon3]
 jobs:
   myEvent:
     runs-on: ubuntu-latest
@@ -10,7 +10,7 @@ jobs:
         with:
           ref: ${{ github.event.client_payload.ref }}
       - run: echo ${{ github.event.client_payload.sha }}
-      
+
 # name: dispatch receiver
 
 # on: 
