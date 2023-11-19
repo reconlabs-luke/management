@@ -18,6 +18,6 @@ jobs:
           git submodule update --remote --recursive
       - name: sdfStudio Clone
         run: |
-          git config -f ./metarecon3/plicar/.gitsubmodule submodule.submodule.branch ${{ github.event.client_payload.branch }}
+          git config -f ./metarecon3/plicar/.gitmodules submodule.submodule.branch ${{ github.event.client_payload.branch }}
           git submodule update --remote --recursive
           git status
